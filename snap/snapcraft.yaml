@@ -5,7 +5,7 @@ summary: nvidia and mesa libraries for core22 snaps
 description: |
   An experimental content snap containing the nvidia and mesa libraries and drivers for core 20
 compression: lzo
-grade: stable
+grade: devel
 confinement: strict
 
 architectures:
