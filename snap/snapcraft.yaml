@@ -1,7 +1,7 @@
-name: nvidia-core20
-base: core20
+name: nvidia-core22
+base: core22
 adopt-info: nvidia
-summary: nvidia and mesa libraries for core20 snaps
+summary: nvidia and mesa libraries for core22 snaps
 description: |
   An experimental content snap containing the nvidia and mesa libraries and drivers for core 20
 compression: lzo
@@ -46,7 +46,7 @@ parts:
       - doc
 
 slots:
-  graphics-core20:
+  graphics-core22:
     interface: content
     read:
       - egl
