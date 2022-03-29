@@ -10,27 +10,28 @@ confinement: strict
 
 architectures:
   - build-on: amd64
+  - build-on: arm64
 
 parts:
   nvidia:
     plugin: nil
     override-pull:
-      snapcraftctl set-version `LANG=C apt-cache policy libnvidia-common-470-server | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'`
+      snapcraftctl set-version `LANG=C apt-cache policy libnvidia-common-510-server | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'`
     stage-packages:
       - libgl1-mesa-dri
       - va-driver-all
       - libegl1
       - libgles2
       - libnvidia-egl-wayland1
-      - libnvidia-cfg1-470-server
-      - libnvidia-common-470-server
-      - libnvidia-compute-470-server
-      - libnvidia-decode-470-server
-      - libnvidia-encode-470-server
-      - libnvidia-extra-470-server
-      - libnvidia-gl-470-server
-      - libnvidia-fbc1-470-server
-      - libnvidia-ifr1-470-server
+      - libnvidia-cfg1-510-server
+      - libnvidia-common-510-server
+      - libnvidia-compute-510-server
+      - libnvidia-decode-510-server
+      - libnvidia-encode-510-server
+      - libnvidia-extra-510-server
+      - libnvidia-gl-510-server
+      - libnvidia-fbc1-510-server
+      - libnvidia-ifr1-510-server
     organize:
       'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri/*': egl/dri/
       'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/*.so*': egl/lib/
