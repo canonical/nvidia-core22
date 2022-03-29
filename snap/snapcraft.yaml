@@ -31,7 +31,6 @@ parts:
       - libnvidia-extra-510-server
       - libnvidia-gl-510-server
       - libnvidia-fbc1-510-server
-      - libnvidia-ifr1-510-server
     organize:
       'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri/*': egl/dri/
       'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/*.so*': egl/lib/
