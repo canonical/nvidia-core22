@@ -16,21 +16,21 @@ parts:
   nvidia:
     plugin: nil
     override-pull:
-      snapcraftctl set-version `LANG=C apt-cache policy libnvidia-common-510-server | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'`
+      snapcraftctl set-version `LANG=C apt-cache policy libnvidia-common-515-server | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'`
     stage-packages:
       - libgl1-mesa-dri
       - va-driver-all
       - libegl1
       - libgles2
       - libnvidia-egl-wayland1
-      - libnvidia-cfg1-510-server
-      - libnvidia-common-510-server
-      - libnvidia-compute-510-server
-      - libnvidia-decode-510-server
-      - libnvidia-encode-510-server
-      - libnvidia-extra-510-server
-      - libnvidia-gl-510-server
-      - libnvidia-fbc1-510-server
+      - libnvidia-cfg1-515-server
+      - libnvidia-common-515-server
+      - libnvidia-compute-515-server
+      - libnvidia-decode-515-server
+      - libnvidia-encode-515-server
+      - libnvidia-extra-515-server
+      - libnvidia-gl-515-server
+      - libnvidia-fbc1-515-server
     organize:
       'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri/*': egl/dri/
       'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/*.so*': egl/lib/
