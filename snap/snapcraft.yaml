@@ -13,10 +13,6 @@ architectures:
   - build-on: arm64
 
 parts:
-  scripts:
-    plugin: dump
-    source: scripts
-
   apis:
     # This provides the essential APIs
     #   o libGL.so.0
@@ -135,6 +131,32 @@ parts:
         echo -n "+mesa"
         apt-cache policy libgl1-mesa-dri | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'
       )"
+
+  file-list:
+    after:
+    - apis
+    - drm
+    - dri
+    - va
+    - x11
+    - wayland
+    - nvidia
+    plugin: nil
+    override-prime: |
+      mkdir -p ${CRAFT_PRIME}/snap
+      (
+        cd ${CRAFT_PART_INSTALL}/../..
+        # All the cruft coming from stage packages, but not actually staged
+        find $( ls -d */install/{etc,usr/{bin,share/{bug,doc,lintian,man}}} ) -type f,l | cut -d/ -f3-
+        cd ${CRAFT_PRIME}
+        # Everything that is indeed staged
+        find usr -type f,l
+      ) | sort -u > ${CRAFT_PRIME}/snap/${CRAFT_TARGET_ARCH}.list
+
+  scripts:
+    after: [file-list]
+    plugin: dump
+    source: scripts
 
 slots:
   graphics-core22:
