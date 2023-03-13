@@ -23,7 +23,6 @@ parts:
     #   o libEGL.so.1
     #   o libva.so.2
     #   o libvulkan.so.1
-    #   o libGLX.so.0
     #
     plugin: nil
     stage-packages:
@@ -31,7 +30,6 @@ parts:
       - libegl1
       - libgles2
       - libvulkan1
-      - libglx0
     prime:
       - usr/lib
       - usr/share/glvnd
@@ -78,6 +76,7 @@ parts:
     # X11 support (not much cost to having this)
     plugin: nil
     stage-packages:
+      - libglx0
       - libva-x11-2
       - libx11-xcb1
       - libxau6
