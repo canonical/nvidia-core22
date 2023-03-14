@@ -19,6 +19,7 @@ parts:
     #   o libEGL.so.1
     #   o libva.so.2
     #   o libvulkan.so.1
+    #   o libgbm.so.1
     #
     plugin: nil
     stage-packages:
@@ -26,6 +27,7 @@ parts:
       - libegl1
       - libgles2
       - libvulkan1
+      - libgbm1
     prime:
       - usr/lib
       - usr/share/glvnd
