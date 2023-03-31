@@ -1,9 +1,10 @@
 name: nvidia-core22
 base: core22
 adopt-info: version
-summary: Nnvidia and Mesa libraries for core22 snaps
+summary: NVIDIA and Mesa libraries for core22 snaps
 description: |
-  An experimental content snap containing the Nvidia and Mesa libraries and drivers for `base: core22` snaps
+  Content snap that provides NVIDIA and Mesa libraries for `base:
+  core22` snaps.
 compression: lzo
 grade: stable
 confinement: strict
