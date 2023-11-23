@@ -109,14 +109,14 @@ parts:
     plugin: nil
     stage-packages:
       - libnvidia-egl-wayland1
-      - libnvidia-cfg1-515-server
-      - libnvidia-common-515-server
-      - libnvidia-compute-515-server
-      - libnvidia-decode-515-server
-      - libnvidia-encode-515-server
-      - libnvidia-extra-515-server
-      - libnvidia-gl-515-server
-      - libnvidia-fbc1-515-server
+      - libnvidia-cfg1-525-server
+      - libnvidia-common-525-server
+      - libnvidia-compute-525-server
+      - libnvidia-decode-525-server
+      - libnvidia-encode-525-server
+      - libnvidia-extra-525-server
+      - libnvidia-gl-525-server
+      - libnvidia-fbc1-525-server
     prime:
       - etc/OpenCL
       - usr/lib
@@ -131,7 +131,7 @@ parts:
       set -x
       craftctl set version="$(
         LANG=C
-        apt-cache policy libnvidia-common-515-server | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p' | tr -d '\n'
+        apt-cache policy libnvidia-common-525-server | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p' | tr -d '\n'
         echo -n "+mesa"
         apt-cache policy libgl1-mesa-dri | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'
       )"
