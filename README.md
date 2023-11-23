@@ -18,3 +18,9 @@ mir-quirks|(optional)Mir configuration|Mir specific
 ----
 
 For more information about the `graphics-core22` interface, see: [The graphics-core22 snap interface](https://mir-server.io/docs/the-graphics-core22-snap-interface) documentation.
+
+The repository license is GPL v3 with copyright Canonical LTD 2023,
+however the license of the actual content snap is mixed license
+(proprietary NVIDIA for NVIDIA libraries, and various open source
+licenses for all other libraries). Installing this snap implies
+accepting NVIDIA license terms.
