@@ -117,6 +117,9 @@ parts:
       - libnvidia-extra-525-server
       - libnvidia-gl-525-server
       - libnvidia-fbc1-525-server
+      - nvidia-utils-525-server
+    organize:
+      'usr/bin/*': bin/
     prime:
       - etc/OpenCL
       - usr/lib
@@ -124,6 +127,7 @@ parts:
       - usr/share/egl
       - usr/share/nvidia
       - usr/share/vulkan
+      - bin/nvidia-smi
 
   version:
     plugin: nil
@@ -161,6 +165,12 @@ parts:
     after: [file-list]
     plugin: dump
     source: scripts
+
+apps:
+  smi:
+    command: bin/nvidia-smi
+    plugs:
+      - opengl
 
 slots:
   graphics-core22:
