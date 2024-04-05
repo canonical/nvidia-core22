@@ -166,6 +166,12 @@ parts:
     plugin: dump
     source: scripts
 
+  symlinks:
+    after: [file-list]
+    plugin: nil
+    override-prime: |
+      ldconfig -N -r $CRAFT_PRIME
+
 apps:
   smi:
     command: bin/nvidia-smi
