@@ -118,6 +118,7 @@ parts:
       - libnvidia-gl-535-server
       - libnvidia-fbc1-535-server
       - nvidia-utils-535-server
+      - xserver-xorg-video-nvidia-535
     organize:
       'usr/bin/*': bin/
     prime:
@@ -127,6 +128,7 @@ parts:
       - usr/share/egl
       - usr/share/nvidia
       - usr/share/vulkan
+      - usr/share/X11/xorg.conf.d
       - bin/nvidia-smi
 
   version:
