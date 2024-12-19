@@ -123,7 +123,7 @@ parts:
       - libnvidia-gl-535-server
       - libnvidia-fbc1-535-server
       - nvidia-utils-535-server
-      - xserver-xorg-video-nvidia-535
+      - xserver-xorg-video-nvidia-535-server
     organize:
       'usr/bin/*': bin/
     prime:
